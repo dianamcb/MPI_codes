@@ -1,0 +1,21 @@
+program sumrie
+
+use mpi
+
+integer::soy(3),somos
+real::a=0.0,b=20.0,base,altura
+real::inicio, fin, delta
+
+call MPI_INIT(ierror)
+
+call MPI_Comm_size(MPI_COMM_WORLD_somos, ierror)
+call MPI_Comm_rank(MPI_COMM_WORLD, soy, ierror)
+
+delta=(b-a)/(somos)
+inicio=delta*soy
+fin=(soy+1)*delta
+
+
+call MPI_Finalize(ierror)
+
+end program
